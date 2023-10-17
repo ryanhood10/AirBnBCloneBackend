@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { data } from './data/data';
 
 function App() {
+  const [data, setData] = useState([]); // State to hold your data
+
+  useEffect(() => {
+    // Make a GET request to fetch the data
+    fetch('http://localhost:3001/api/data') // Adjust the URL if necessary
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data); // Set the fetched data in state
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+  
+
   return (
     <div className="App">
       <header className="App-header">

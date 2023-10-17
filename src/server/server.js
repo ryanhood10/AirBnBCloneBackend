@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-
+// Import your data.js file
+const { data } = require('../data/data')
 
 // Serve your React app's build folder (assuming you've built it)
 app.use(express.static('build'));
 
 // Define your API endpoint to serve data
 app.get('/api/data', (req, res) => {
-  // Import your data.js file
-  const { data } = require('./src/data/data');
+    res.json(data);
 
   // Return the data as JSON
   res.json(data);

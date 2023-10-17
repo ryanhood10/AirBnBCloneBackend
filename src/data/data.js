@@ -1,5 +1,5 @@
 // Los Angeles Images
-import LA1 from '../components/images/LA1.jpeg'
+import LA1 from '../components/images/LA1.jpeg';
 import LA2 from '../components/images/LA2.jpeg';
 import LA3 from '../components/images/LA3.jpeg';
 import LA4 from '../components/images/LA4.webp';
@@ -41,12 +41,11 @@ import HOU4 from '../components/images/HOU4.jpeg';
 import HOU5 from '../components/images/HOU5.jpeg';
 
 
-
-export const data = [
+const data = [
 
     // new york
         {
-          "img": NY1,
+          "img": [NY1],
           "location": "Downtown Manhattan",
           "title": "Cozy Downtown Studio",
           "description": "2 guests · 1 bedroom · 1 bed · 1 bathroom · Wifi · Kitchen · Air conditioning",
